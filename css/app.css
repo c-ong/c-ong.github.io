@@ -8,7 +8,7 @@ body {
     height: 100%;
 }
 
-#xfly_viewport a {
+.page-ui a {
     display: block;
     font-size: 18px;
     height: 40px;
@@ -32,6 +32,33 @@ header {
     font-size: 1.8rem;
 }
 
+header h1 {
+    display: inline-block;
+    font-size: 2.2rem;
+    line-height: 30px;
+    height: 30px;
+    margin: auto;
+    width: 100%;
+}
+
 .page-ui {
     margin: 16px;
+}
+
+.src-expand {
+    display: inline-block;
+    border: white solid 1px;
+    border-radius: 4px;
+    background: white;
+    /* float: right; */
+    font-size: 0.6rem;
+    padding: 0 8px;
+    margin: 15px;
+    position: absolute;
+    font-style: normal;
+    color: black;
+    height: 30px;
+    line-height: 30px;
+    right: 0;
+    text-decoration: none;
 }
