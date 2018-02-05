@@ -6,7 +6,10 @@ var SourceMap = {
         'multi.instance':   'multi.instance.js',
         'page.with.args':   'page.with.args.js',
         'reload':           'reload.js',
-        'see.you.again':    'see.you.again.js'
+        'see.you.again':    'see.you.again.js',
+
+        'member.not.engagement':    'member.not.engagement.js',
+        'member.engagement':        'member.engagement.js'
     },
 
     updateExpandButton: function () {
