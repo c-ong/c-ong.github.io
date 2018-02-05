@@ -8,7 +8,7 @@ body {
     height: 100%;
 }
 
-.page-ui a {
+.page-ui a, .sign-in, .sign-out {
     display: block;
     font-size: 18px;
     height: 40px;
@@ -21,6 +21,12 @@ body {
     background-color: white;
     margin-top: 16px;
     text-decoration: none;
+}
+
+.sign-in, .sign-out {
+    width: 100%;
+    background: #4d90fe;
+    color: white;
 }
 
 header {

@@ -10,6 +10,7 @@ $Page.define('welcome', {
             '<a class="xfly-page__nav" href="multi/instance?key=primary">Page with Multi-instance</a>' +
             '<a class="xfly-page__nav" href="multi/instance?key=second">Page with Multi-instance 2</a>' +
             '<a class="xfly-page__nav" href="reload">Next page(Reload)</a>' +
+            '<a class="xfly-page__nav" data-if="hasMember" href="member/engagement" data-else-href="member/not/engagement">Logic Expression</a>' +
             '<br/>' +
             '<br/>' +
             '<br/>' +

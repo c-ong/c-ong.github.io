@@ -22,6 +22,9 @@
 
     <script type="text/javascript" charset="utf-8" src="/js/source-map.js"></script>
 
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+
 
     <title>Xfly</title>
     <meta name="description" content="This is SPA framework for the lite Web App with Modern browser.">
@@ -33,8 +36,13 @@
 <script type="text/javascript" charset="utf-8" src="/js/app/multi.instance.js" defer></script>
 <script type="text/javascript" charset="utf-8" src="/js/app/reload.js" defer></script>
 
+<script type="text/javascript" charset="utf-8" src="/js/app/member.not.engagement.js" defer></script>
+<script type="text/javascript" charset="utf-8" src="/js/app/member.engagement.js" defer></script>
+
 <script defer>
     $.ajaxSettings['cache'] = ! 1;
+
+    var hasMember = false;
 
     $Page.config({
         onAfterPageChange: function(older, currently) {
@@ -55,3 +63,4 @@
 </div>
 </body>
 </html>
+
