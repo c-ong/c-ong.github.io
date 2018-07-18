@@ -971,20 +971,20 @@ body {
 }
 
 .learn-more h2, .footer h2 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: normal;
     /*line-height: 1.67em;*/
 }
 .learn-more .btn-contact, .footer .btn-contact {
     display: inline-block;
-    padding: .5em 1.5em;
+    padding: .4em 1em;
     border-radius: 2em;
     /* vertical-align: middle; */
     transition: box-shadow .4s ease-in-out;
 }
 .footer .btn-contact {
-    color: #000;
-    background: #fff;
+    color: #fff;
+    background: #000;
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
 }
 .learn-more .btn-contact {
