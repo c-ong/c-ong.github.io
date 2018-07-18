@@ -1,69 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"/>
-    <base target="_self"/>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="apple-mobile-web-app-title" content="Xfly"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="white"><meta name="format-detection" content="telephone=no"><meta name="msapplication-tap-highlight" content="no"><link rel="stylesheet" href="/assets/css/main-43e86867c8.css"><link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"><link href="https://fonts.googleapis.com/css?family=Playfair+Display|Hind:300,400,500|Fira+Sans:400,500" rel="stylesheet"><title>Chenglong Xiao's Portfolio</title><meta name="description" content="This is SPA framework for the lite Web App with Modern browser."></head><body id="xfly_viewport" class="x-ui"><div class="page-load-indicator" id="page_load_indicator" style=""><div class="indicator-wrapper"><div class="indicator"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve"><rect x="0" y="13" width="4" height="4" fill="#000"><animate attributeName="opacity" attributeType="XML" values="0;1;0" begin="0s" dur="1s" repeatCount="indefinite"/></rect><rect x="10" y="13" width="4" height="4" fill="#000"><animate attributeName="opacity" attributeType="XML" values="0;1;0" begin="0.15s" dur="1s" repeatCount="indefinite"/></rect><rect x="20" y="13" width="4" height="4" fill="#000"><animate attributeName="opacity" attributeType="XML" values="0;1;0" begin="0.3s" dur="1s" repeatCount="indefinite"/></rect></svg></div></div></div><script src="/assets/js/lib-9117158441.js"></script><script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script><script defer="defer">var manifest={"/":["assets/js/47.js?_=1532709855"],"/index":["assets/js/1445916163.js?_=1532709855"],"/designs/lairen/pro":["assets/js/M831826578.js?_=M2049692101"],"/codes":["assets/js/1440404823.js?_=M1875935937"],"/codes/xfly/examples/index":["assets/js/M1832910232.js?_=1297349502"],"/codes/xfly/examples/multi/instance":["assets/js/1666285525.js?_=1798872458"],"/codes/xfly/examples/page/with/args":["assets/js/138349616.js?_=302773219"],"/codes/xfly/examples/reload":["assets/js/M736044349.js?_=M2035005765"],"/codes/xfly/examples/see/you/again":["assets/js/M762555830.js?_=1156303792"],"/codes/xfly/examples/member/not/engagement":["assets/js/158313126.js?_=395469610"],"/codes/xfly/examples/member/engagement":["assets/js/M406387862.js?_=M1363246536"]};
 
 
-    <meta name="apple-mobile-web-app-title" content="Xfly">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="white">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-
-
-    <link rel="stylesheet" href="/css/xfly.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/app.css" type="text/css"/>
-
-    <!--<script type="text/javascript" charset="utf-8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-
-    <script type="text/javascript" charset="utf-8" src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-    <!--<script type="text/javascript" charset="utf-8" src="/js/3rd/zepto/1.2.0/fx.min.js"></script>-->
-    <script type="text/javascript" charset="utf-8" src="/js/xfly/xfly.min.js"></script>
-    
-
-    <script type="text/javascript" charset="utf-8" src="/js/source-map.js"></script>
-
-    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
-
-
-    <title>Xfly</title>
-    <meta name="description" content="This is SPA framework for the lite Web App with Modern browser.">
-</head>
-<body id="xfly_viewport" class="x-ui">
-<script type="text/javascript" charset="utf-8" src="/js/app/welcome.js" defer></script>
-<script type="text/javascript" charset="utf-8" src="/js/app/see.you.again.js" defer></script>
-<script type="text/javascript" charset="utf-8" src="/js/app/page.with.args.js" defer></script>
-<script type="text/javascript" charset="utf-8" src="/js/app/multi.instance.js" defer></script>
-<script type="text/javascript" charset="utf-8" src="/js/app/reload.js" defer></script>
-
-<script type="text/javascript" charset="utf-8" src="/js/app/member.not.engagement.js" defer></script>
-<script type="text/javascript" charset="utf-8" src="/js/app/member.engagement.js" defer></script>
-
-<script defer>
-    $.ajaxSettings['cache'] = ! 1;
-
+    $.ajaxSettings[ 'cache' ] = !! 0;
     var hasMember = false;
 
-    $Page.config({
-        onAfterPageChange: function(older, currently) {
-            SourceMap.updateExpandButton();
-        },
-
-        onCurrentPageContentLoaded: function() {
-
+    $( function () {
+        /*alert( 'Now, take you to the SPA mode.' );*/
+        var target = manifest[location.pathname] || [];
+        for ( var idx in target ) {
+            import_script( '/' + target[ idx ] );
         }
-    });
-
-    $(function () {
-        SourceMap.updateExpandButton();
-    });
-</script>
-<header><h1>Xfly</h1><a class="src-expand" href="" target="_blank">CODE</a></header>
-<div id="xfly_dialog"><div id="dialog_mask"></div>
-</div>
-</body>
-</html>
-
+    } );</script></body></html>
