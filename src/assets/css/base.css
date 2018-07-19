@@ -483,7 +483,7 @@ body {
     width: 16px;
     content: ',';
 }
-.project-team ul:last-child::after {
+.project-team :last-child::after {
     display: initial;
     width: initial;
     content: initial;
@@ -1044,7 +1044,7 @@ body {
 }
 
 .architecture a {
-    margin: 0 8px;
+    margin: 0 16px;
 }
 
 /*.architecture :first-child::after {*/
@@ -1052,7 +1052,7 @@ body {
 .architecture a::after {
     content: '';
     position: absolute;
-    right: -11px;
+    right: -16px;
     top: 50%;
     display: block;
     width: 2px;

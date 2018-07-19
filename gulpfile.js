@@ -1002,11 +1002,11 @@ gulp.task( 'optimize-image', function() {
     //   .pipe( gulp.dest( 'assets/img' ) );
 } );
 
-gulp.task( 'dev-build', function () {
+gulp.task( 'dev-manifest-build', function () {
     prod = false;
     do_next_stage();
 } );
-gulp.task( 'prod-build', function () {
+gulp.task( 'prod-manifest-build', function () {
     prod = true;
     do_next_stage();
 } );
@@ -1039,5 +1039,5 @@ gulp.task( 'dev-dump', function() {
 
     do_next_stage();
 } );
-gulp.task( 'dev', [ 'dev-build', 'optimize-image' ] );
-gulp.task( 'prod', [ 'prod-build', 'optimize-image' ] );
+gulp.task( 'dev', [ 'dev-manifest-build', 'optimize-image' ] );
+gulp.task( 'prod', [ 'prod-manifest-build', 'optimize-image' ] );
