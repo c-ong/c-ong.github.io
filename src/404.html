@@ -5,8 +5,12 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
 
+    <title>Chenglong Xiao's Portfolio</title>
+    <meta name="description"
+          content="This is SPA framework for the lite Web App with Modern browser.">
 
-    <meta name="apple-mobile-web-app-title" content="Xfly">
+
+    <meta name="apple-mobile-web-app-title" content="c-ong">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="format-detection" content="telephone=no">
@@ -28,9 +32,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Hind:300,400,500|Fira+Sans:400,500" rel="stylesheet">
 
 
-    <title>Chenglong Xiao's Portfolio</title>
-    <meta name="description"
-          content="This is SPA framework for the lite Web App with Modern browser.">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122841012-1"></script>
 </head>
 <body id="xfly_viewport" class="x-ui">
 <div class="page-load-indicator" id="page_load_indicator" style="">
@@ -78,6 +81,13 @@
             import_script( '/' + target[ idx ] );
         }
     } );
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122841012-1');
 </script>
 </body>
 </html>
