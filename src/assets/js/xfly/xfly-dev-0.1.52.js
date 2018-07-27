@@ -3225,15 +3225,17 @@
         //if ( ! _check_state_event( event ) )
         //    return;
     
-        if ( ! event.state ) {
+        if ( typeof event['state'] !== 'undefined' && $.browser.safari ) {
+            return;
+        } else {
             if ( _runtime_back_stack.length ) {
                 var fake_event = { state: {} };
                 fake_event.state[ _STACK_INDEX_ ] = _FIRST_STATE;
-            
+        
                 _handle_backward( fake_event );
                 return;
             }
-        
+    
             location.reload();
             return;
         }
@@ -4112,7 +4114,7 @@
 
             // TODO(XCL): Some reason caused error
             if ( ! first ) {
-                console.error( 'Some reason caused error' );
+                console.error( 'Unknown reason caused the error' );
                 return;
             }
             /* 标识 Page 实例已初始化 */

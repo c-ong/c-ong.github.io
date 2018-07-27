@@ -840,22 +840,27 @@ function handle_stage_change(new_stage) {
             break;
             
         case 8: {
-            var stream = gulp.src('*.html')
-                .pipe( usemin( {
-                    css: [ minify_css, rev ],
-                    js: [ uglify, rev ]
-                } ) )
-                .pipe( gulp.dest( '' ) );
+            if ( prod ) {
+                var stream = gulp.src( '*.html' )
+                                 .pipe( usemin( {
+                                     css: [ minify_css, rev ],
+                                     js : [ uglify, rev ]
+                                 } ) )
+                                 .pipe( gulp.dest( '' ) );
     
-            stream.on( 'finish', function () {
+                stream.on( 'finish', function () {
+                    log_succeed( new_stage );
+                    do_next_stage();
+        
+                } );
+    
+                stream.on( 'error', function () {
+                    log_failed( new_stage );
+                } );
+            } else {
                 log_succeed( new_stage );
                 do_next_stage();
-                
-            } );
-    
-            stream.on( 'error', function () {
-                log_failed( new_stage );
-            } );
+            }
         }
         break;
         
