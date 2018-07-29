@@ -977,7 +977,8 @@ body {
 }
 .learn-more .btn-contact, .footer .btn-contact {
     display: inline-block;
-    padding: .4em 1em;
+    font-size: 16px;
+    padding: .8em 2em;
     border-radius: 2em;
     /* vertical-align: middle; */
     transition: box-shadow .4s ease-in-out;
