@@ -17,13 +17,29 @@
     <meta name="msapplication-tap-highlight" content="no">
 
 
-    <!-- build:css ./assets/css/main.css -->
+@@if(mode==='DEV'){
     <link rel="stylesheet" href="/src/assets/vendor/bootstarp/3.3.7-dist/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="/src/assets/css/base.css" type="text/css"/>
     <link rel="stylesheet" href="/src/assets/css/xfly.css" type="text/css"/>
     <link rel="stylesheet" href="/src/assets/css/codes.css" type="text/css"/>
     <link rel="stylesheet" href="/src/assets/css/animation.css" type="text/css"/>
-    <!-- endbuild -->
+
+    <!-- buildx:js ./assets/js/lib.js -->
+    <script src="/src/app/build/template.js"></script>
+    <script src="/src/app/build/footer.tpl.js"></script>
+    <script src="/src/assets/vendor/zepto/1.2.0/zepto.min.js"></script>
+    <script src="/src/assets/vendor/zepto/1.2.0/detect.js"></script>
+    <script src="/src/assets/js/xfly/xfly-dev-0.1.52.js"></script>
+    <!-- endbuildx -->
+}
+@@if(mode==='PROD'){
+<style>
+@@include('../assets/css/inline/main.css')
+</style>
+<script defer>
+@@include('../assets/js/inline/lib.js')
+</script>
+}
 
 
     <link rel="stylesheet"
@@ -52,13 +68,6 @@
         </div>
     </div>
 </div>
-<!-- build:js ./assets/js/lib.js -->
-<script src="/src/app/build/template.js"></script>
-<script src="/src/app/build/footer.tpl.js"></script>
-<script src="/src/assets/vendor/zepto/1.2.0/zepto.min.js"></script>
-<script src="/src/assets/vendor/zepto/1.2.0/detect.js"></script>
-<script src="/src/assets/js/xfly/xfly-dev-0.1.52.js"></script>
-<!-- endbuild -->
 <script type="text/javascript"
         src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
 <script defer>

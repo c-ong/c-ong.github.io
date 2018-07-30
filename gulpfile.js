@@ -818,7 +818,60 @@ function handle_stage_change(new_stage) {
         }
             break;
             
-        case 7:
+        case 7: {
+            if ( prod ) {
+                var stream = gulp.src( [
+                               'src/assets/vendor/bootstarp/3.3.7-dist/css/bootstrap.min.css',
+                               'src/assets/css/base.css',
+                               'src/assets/css/xfly.css',
+                               'src/assets/css/codes.css',
+                               'src/assets/css/animation.css' ] )
+                           .pipe( concat_css( 'main.css' ) )
+                           .pipe( minify_css() )
+                           .pipe( gulp.dest( 'assets/css/inline' ) );
+    
+                stream.on( 'finish', function () {
+                    log_succeed( new_stage );
+                    do_next_stage();
+                } );
+    
+                stream.on( 'error', function () {
+                    log_failed( new_stage );
+                } );
+            } else {
+                log_succeed( new_stage );
+                do_next_stage();
+            }
+        }
+        break;
+        case 8: {
+            if ( prod ) {
+                var stream = gulp.src( [
+                                     'src/app/build/template.js',
+                                     'src/app/build/footer.tpl.js',
+                                     'src/assets/vendor/zepto/1.2.0/zepto.min.js',
+                                     'src/assets/vendor/zepto/1.2.0/detect.js',
+                                     'src/assets/js/xfly/xfly-dev-0.1.52.js' ] )
+                                 .pipe( concat( 'lib.js' ) )
+                                 .pipe( uglify() )
+                                 .pipe( gulp.dest( 'assets/js/inline' ) );
+    
+                stream.on( 'finish', function () {
+                    log_succeed( new_stage );
+                    do_next_stage();
+                } );
+    
+                stream.on( 'error', function () {
+                    log_failed( new_stage );
+                } );
+            } else {
+                log_succeed( new_stage );
+                do_next_stage();
+            }
+        }
+        break;
+            
+        case 9:
         {
             var stream = gulp.src('src/*.html')
                 .pipe( fileinclude( {
@@ -839,7 +892,7 @@ function handle_stage_change(new_stage) {
         }
             break;
             
-        case 8: {
+        case 10: {
             if ( prod ) {
                 var stream = gulp.src( '*.html' )
                                  .pipe( usemin( {
@@ -864,7 +917,7 @@ function handle_stage_change(new_stage) {
         }
         break;
         
-        case 9:
+        case 11:
         {
             gulp.src('*.html')
                 .pipe( htmlmin( { collapseWhitespace: true } ) )
@@ -988,6 +1041,7 @@ gulp.task( 'html', function () {
         .pipe( htmlmin( { collapseWhitespace: true } ) )
         .pipe( gulp.dest( '' ) );
 } );
+
 
 gulp.task('clean-for-prod', function () {
     return gulp.src(
