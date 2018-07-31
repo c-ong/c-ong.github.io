@@ -464,7 +464,7 @@ body {
     vertical-align: middle;
     transform: translateY(-5px);
 
-    background: #007aff url(../img/ic_group_white.png) center no-repeat;
+    background: #007aff url("/assets/img/ic_group_white.png") center no-repeat;
     background-size: 16px;
     padding-left: 2.6em;
     background-position: .8em .3em;
@@ -1114,33 +1114,6 @@ body {
     margin: 0 8px;
 }
 
-.browser .browsers a {
-    background: url(../img/browser/chrome.svg) center 12px no-repeat;
-    padding: 80px 0 12px;
-    background-size: 64px;
-    width: 88px;
-    display: block;
-    border-radius: 3px;
-    font-size: 16px;
-}
-
-.browser .browsers a:hover {
-    color: #000000;
-    background-color: #F8F8F9;
-}
-
-.browser .browsers a.browser-firefox {
-    background-image: url(../img/browser/firefox.svg);
-}
-
-.browser .browsers a.browser-safari {
-    background-image: url(../img/browser/safari.svg);
-}
-
-.browser .browsers a.browser-opera {
-    background-image: url(../img/browser/opera.svg);
-}
-
 
 .nextrouter {
     padding: 32px 0;
@@ -1160,13 +1133,13 @@ body {
 }
 
 .icon-chevronleft {
-    background: url("../img/chevron_left.svg") center no-repeat;
+    background: url("/assets/img/chevron_left.svg") center no-repeat;
     /*margin-right: 12px;*/
     /*transform: rotate(180deg);*/
 }
 
 .icon-chevronright {
-    background: url("../img/chevron_right.svg") center no-repeat;
+    background: url("/assets/img/chevron_right.svg") center no-repeat;
     /*margin-left: 12px;*/
 }
 
