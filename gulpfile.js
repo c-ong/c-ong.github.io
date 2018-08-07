@@ -9,7 +9,7 @@ var newer        = require('gulp-newer');
 //var js_hint      = require('gulp-jshint');
 
 var uglify       = require('gulp-uglify');
-var minify_css   = require("gulp-minify-css");
+var clean_css    = require('gulp-clean-css');
 
 var concat       = require("gulp-concat");
 
@@ -489,7 +489,7 @@ function handle_stage_change(new_stage) {
                 // TODO 新增的文件不会被转换到 .cache
                 if ( css_files.length ) {
                     var stream = gulp.src( css_files, { base: 'src' } )
-                                     .pipe( minify_css() )
+                                     .pipe( clean_css() )
                                      .pipe( gulp.dest( 'src/app/build/.cache/' ) );
         
                     stream.on( 'finish', function () {
@@ -673,7 +673,7 @@ function handle_stage_change(new_stage) {
                                      : concat_css( job.concat_name ) )
                                  .pipe( job.is_js
                                      ? uglify()
-                                     : minify_css() )
+                                     : clean_css() )
                                  .pipe( gulp.dest( job.dest ) );
     
                 stream.on( 'finish', function () {
@@ -827,7 +827,7 @@ function handle_stage_change(new_stage) {
                                'src/assets/css/codes.css',
                                'src/assets/css/animation.css' ] )
                            .pipe( concat_css( 'main.css' ) )
-                           .pipe( minify_css() )
+                           .pipe( clean_css() )
                            .pipe( gulp.dest( 'assets/css/inline' ) );
     
                 stream.on( 'finish', function () {
@@ -893,27 +893,30 @@ function handle_stage_change(new_stage) {
             break;
             
         case 10: {
-            if ( prod ) {
-                var stream = gulp.src( '*.html' )
-                                 .pipe( usemin( {
-                                     css: [ minify_css, rev ],
-                                     js : [ uglify, rev ]
-                                 } ) )
-                                 .pipe( gulp.dest( '' ) );
+            //if ( prod ) {
+            //    var stream = gulp.src( '*.html' )
+            //                     .pipe( usemin( {
+            //                         css: [ clean_css, rev ],
+            //                         js : [ uglify, rev ]
+            //                     } ) )
+            //                     .pipe( gulp.dest( '' ) );
+            //
+            //    stream.on( 'finish', function () {
+            //        log_succeed( new_stage );
+            //        do_next_stage();
+            //
+            //    } );
+            //
+            //    stream.on( 'error', function () {
+            //        log_failed( new_stage );
+            //    } );
+            //} else {
+            //    log_succeed( new_stage );
+            //    do_next_stage();
+            //}
     
-                stream.on( 'finish', function () {
-                    log_succeed( new_stage );
-                    do_next_stage();
-        
-                } );
-    
-                stream.on( 'error', function () {
-                    log_failed( new_stage );
-                } );
-            } else {
-                log_succeed( new_stage );
-                do_next_stage();
-            }
+            log_succeed( new_stage );
+            do_next_stage();
         }
         break;
         
@@ -1036,11 +1039,6 @@ var Pretty = function () {
 
 var pretty = new Pretty();
 
-gulp.task( 'html', function () {
-    gulp.src('*.html')
-        .pipe( htmlmin( { collapseWhitespace: true } ) )
-        .pipe( gulp.dest( '' ) );
-} );
 
 
 gulp.task('clean-for-prod', function () {
@@ -1098,5 +1096,6 @@ gulp.task( 'dev-dump', function() {
 
     do_next_stage();
 } );
+
 gulp.task( 'dev', [ 'dev-manifest-build', 'optimize-image' ] );
 gulp.task( 'prod', [ 'prod-manifest-build', 'optimize-image' ] );

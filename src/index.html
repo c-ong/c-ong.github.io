@@ -15,7 +15,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-
+    <!--[if IE]>
+    <script>
+        window.location.href = 'unsupported.html';
+    </script>
+    <![endif]-->
 
 @@if(mode==='DEV'){
     <link rel="stylesheet" href="/src/assets/vendor/bootstarp/3.3.7-dist/css/bootstrap.min.css" type="text/css"/>
