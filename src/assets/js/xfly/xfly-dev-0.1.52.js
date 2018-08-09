@@ -3989,8 +3989,19 @@
         }
 
         var route = _extract_route_from_link( target_href );
-
-        _request_go( route.target, route.args );
+    
+        if ( _exist( route.target ) ) {
+            _request_go( route.target, route.args );
+        } else {
+            if ( target_href.charAt( 0 ) !== '/' )
+                $link.attr( 'href', target_href = '/' + target_href );
+        
+            // FIXME(XCL): 如果这里不 push state 则，后退不会重新加载
+            //_push_history_state( _new_state(), '', href );
+            _persistent_state_for_redirect( target_href );
+            
+            return !! 0;
+        }
 
         return !! 1;
     }
@@ -4006,19 +4017,7 @@
         var href = $link.attr( 'href' );
     
         if ( $link.is( '.xfly-page__nav' ) && href ) {
-            var route = _extract_route_from_link( href );
-        
-            if ( _exist( route.target ) ) {
-                _request_go( route.target, route.args );
-                return !! 1;
-            } else {
-                if ( href.charAt( 0 ) !== '/' )
-                    $link.attr( 'href', href = '/' + href );
-            
-                // FIXME(XCL): 如果这里不 push state 则，后退不会重新加载
-                //_push_history_state( _new_state(), '', href );
-                _persistent_state_for_redirect( href );
-            }
+            return _process_forward_navigation( $link );
         }
         else if (
             $link.is( '.xfly-page__back' )

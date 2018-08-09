@@ -25,7 +25,10 @@ var config = {
     "/codes/xfly/examples/index": [
         "src/app/build/codes/xfly/examples/header.tpl.js",
         "src/app/codes/xfly/examples/source-map.js",
-        "src/app/codes/xfly/examples/index.js"
+        "src/app/codes/xfly/examples/index.js",
+    
+        "@/codes/xfly/examples/member/engagement",
+        "@/codes/xfly/examples/member/not/engagement"
     ],
     "/codes/xfly/examples/multi/instance": [
         "src/app/build/codes/xfly/examples/header.tpl.js",
@@ -47,15 +50,21 @@ var config = {
         "src/app/codes/xfly/examples/source-map.js",
         "src/app/codes/xfly/examples/see.you.again.js"
     ],
+    
     "/codes/xfly/examples/member/not/engagement": [
         "src/app/build/codes/xfly/examples/header.tpl.js",
         "src/app/codes/xfly/examples/source-map.js",
-        "src/app/codes/xfly/examples/member.not.engagement.js"
+        "src/app/codes/xfly/examples/member.not.engagement.js",
+        
+        "@/codes/xfly/examples/index",
+        "@/codes/xfly/examples/member/engagement"
     ],
-    
     "/codes/xfly/examples/member/engagement": [
         "src/app/build/codes/xfly/examples/header.tpl.js",
         "src/app/codes/xfly/examples/source-map.js",
-        "src/app/codes/xfly/examples/member.engagement.js"
+        "src/app/codes/xfly/examples/member.engagement.js",
+        
+        "@/codes/xfly/examples/index",
+        "@/codes/xfly/examples/member/not/engagement"
     ]
 };

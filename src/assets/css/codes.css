@@ -41,6 +41,10 @@
     color: white;
 }
 
+.weui-toast__content {
+    color: white;
+}
+
 /*header {*/
     /*background: black;*/
     /*color: white;*/

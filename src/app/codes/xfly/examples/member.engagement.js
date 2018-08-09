@@ -4,7 +4,13 @@ $Page.define('codes.xfly.examples.member.engagement', {
 
     onCreateView: function() {
         this.render( { html: template( 'codes/xfly/examples/header.tpl' )() } );
-        
+    },
+
+    onRendering: function() {
+
+    },
+
+    onRendered: function() {
         $('.xfly-example-inner').html(
             '<h1>Yeah, you are joined</h1>' +
             '<hr/>' +
@@ -15,13 +21,7 @@ $Page.define('codes.xfly.examples.member.engagement', {
         setTimeout( function () {
             $('.project-intro').addClass('animated fade-in-enter-effect');
         }, 400 );
-    },
-
-    onRendering: function() {
-
-    },
-
-    onRendered: function() {
+        
         $('#page_load_indicator').toggle( false );
         
         $('.sign-out').on( 'click', function () {
