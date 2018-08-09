@@ -2042,9 +2042,13 @@
     
         return _push( page, animation );
     }
+    
+    function _remember_scroll_position_y_for_state(state) {
+        state[ _SCROLL_POSITION_Y_ ] = _obtain_scroll_position_y();
+    }
 
     function _push_history_state/*_push_state*/(state, title, url_or_hash) {
-        state[ _SCROLL_POSITION_Y_ ] = _obtain_scroll_position_y();
+        _remember_scroll_position_y_for_state( state );
 
         //_persistent_state( state, title, url_or_hash );
     
@@ -2053,7 +2057,10 @@
     }
     
     function _persistent_state_for_redirect(url) {
-        _persistent_url_for_back( 0, '', url )
+        var fake_state = {};
+        _remember_scroll_position_y_for_state( fake_state );
+        
+        _persistent_url_for_back( fake_state, '', url )
         //_push_state( _new_state(), '', url )
     }
 
@@ -2146,6 +2153,8 @@
                 var state = _new_state(),
                     title = page[ _TITLE ],
                     url = _build_url_for_render( page );
+                
+                _remember_scroll_position_y_for_state( state );
         
                 _persistent_url_for_back( state, title, url );
         
@@ -3226,6 +3235,13 @@
         //    return;
     
         if ( typeof event['state'] !== 'undefined' && $.browser.safari ) {
+            if ( _runtime_back_stack.length == 1 ) {
+                var fake_event = {};
+                fake_event[ _BSR_IDX ] = _FIRST_STATE;
+                
+                _handle_backward( fake_event );
+            }
+            
             return;
         } else {
             if ( _runtime_back_stack.length ) {
@@ -4116,6 +4132,11 @@
                 console.error( 'Unknown reason caused the error' );
                 return;
             }
+    
+            /* 设为当前 page */
+            _current                    = first;
+            _current_state[ _BSR_IDX ]  = _FIRST_STATE;
+            
             /* 标识 Page 实例已初始化 */
             _mark_was_instantiated( first );
             
@@ -4139,10 +4160,6 @@
                     _build_url_for_render( first )
                 );
             }
-
-            /* 设为当前 page */
-            _current                    = first;
-            _current_state[ _BSR_IDX ]  = _FIRST_STATE;
 
             if ( session_storage_supported ) {
                 var last_state = ss.getItem(
@@ -4202,7 +4219,8 @@
          * 配置 CSS Transform 硬件加速
          * (function(viewport) {
          *    set_gpu_accelerated_compositing_enabled( viewport, 0 );
-         *    set_gpu_accelerated_compositing_enabled( viewport, ! ($x.os.ios && $x.browser.qqx5) );
+         *    set_gpu_accelerated_compositing_enabled( viewport, ! ($x.os.ios
+         * && $x.browser.qqx5) );
          * }(document.body));
          */
     
