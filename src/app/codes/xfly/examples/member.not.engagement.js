@@ -31,5 +31,7 @@ $Page.define('codes.xfly.examples.member.not.engagement', {
 
             weui.toast( 'Member flag was updated', { duration: 900 } );
         } );
+    
+        SourceMap.updateExpandButton();
     }
 });

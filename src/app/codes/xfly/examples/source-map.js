@@ -1,7 +1,8 @@
 var SourceMap = {
-    base_path: 'https://github.com/c-ong/c-ong.github.io/blob/master/js/app/',
+    base_path: 'https://github.com/c-ong/c-ong.github.io/tree/master/src/app/codes/xfly/examples/',
 
     map: {
+        'codes.xfly.examples.index':            'index.js',
         'codes.xfly.examples.welcome':          'welcome.js',
         'codes.xfly.examples.multi.instance':   'multi.instance.js',
         'codes.xfly.examples.page.with.args':   'page.with.args.js',

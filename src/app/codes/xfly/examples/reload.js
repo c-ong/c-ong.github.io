@@ -36,6 +36,8 @@
             $('.page-ui').remove();
 
             render( this );
+    
+            SourceMap.updateExpandButton();
         }
     });
 }();

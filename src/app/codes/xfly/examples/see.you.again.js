@@ -22,5 +22,7 @@ $Page.define('codes.xfly.examples.see.you.again', {
 
     onRendered: function() {
         $('#page_load_indicator').toggle( false );
+    
+        SourceMap.updateExpandButton();
     }
 });
