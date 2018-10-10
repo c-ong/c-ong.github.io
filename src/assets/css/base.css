@@ -978,8 +978,8 @@ body {
 .learn-more .btn-contact, .footer .btn-contact {
     display: inline-block;
     font-size: 16px;
-    padding: .8em 2em;
-    border-radius: 2em;
+    padding: .8em 1.2em;
+    border-radius: 4px;
     /* vertical-align: middle; */
     transition: box-shadow .4s ease-in-out;
 }
@@ -992,6 +992,13 @@ body {
      color: #fff;
      background: #000;
  }
+.cursor {
+    width: .3rem;
+    background: #F44336;
+    height: 1rem;
+    display: inline-block;
+    margin-left: .2rem;
+}
 
 .learn-more .btn-contact:hover, .footer .btn-contact:hover {
     box-shadow: 0 24px 48px 10px rgba(0, 0, 0, .1);

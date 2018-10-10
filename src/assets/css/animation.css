@@ -72,6 +72,11 @@
     }
 }
 
+.blink-effect {
+    -webkit-animation-name: blink;
+    animation-name: blink;
+}
+
 .slide-up-effect {
     -webkit-animation-name: slide-up-effect;
     animation-name: slide-up-effect;
@@ -187,6 +192,22 @@
 .faa-parent.animated-hover:hover > .faa-shake.faa-slow {
     -webkit-animation: wrench 3.7s ease infinite;
     animation: wrench 3.7s ease infinite;
+}
+@-webkit-keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes pulse-ring {
