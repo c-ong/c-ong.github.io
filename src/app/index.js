@@ -19,6 +19,8 @@ $Page.define('index', {
     },
     
     onRendered: function () {
+        adjust_for_dark();
+        
         $('.violator').on('click', function () {
             var ctx = $( this );
             

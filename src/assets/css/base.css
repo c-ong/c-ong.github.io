@@ -408,7 +408,7 @@ body {
     transition: color .3s;
 }
 
-/* details of designs */
+/* Details of designs */
 .project-section {
     margin-bottom: 224px;
     font-size: 16px;
@@ -470,6 +470,11 @@ body {
     background-position: .8em .3em;
 }
 
+.project-intro .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .project-team ul, .project-team li {
     display: inline-block;
     position: relative;
@@ -489,7 +494,7 @@ body {
     content: initial;
 }
 .project-team a {
-    color: #000!important;
+    color: #000;
     border-radius: 4px;
     padding: 0 .2em;
 }
@@ -975,7 +980,9 @@ body {
     font-weight: normal;
     /*line-height: 1.67em;*/
 }
-.learn-more .btn-contact, .footer .btn-contact {
+.learn-more .btn-contact,
+.footer .btn-contact {
+    position: relative;
     display: inline-block;
     font-size: 16px;
     padding: .8em 1.2em;
@@ -989,15 +996,19 @@ body {
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
 }
 .learn-more .btn-contact {
-     color: #fff;
-     background: #000;
+    position: relative;
+    color: #fff;
+    background: #000;
  }
 .cursor {
-    width: .3rem;
     background: #F44336;
-    height: 1rem;
-    display: inline-block;
-    margin-left: .2rem;
+
+    display: block;
+    position: absolute;
+    right: 1.2rem;
+    height: 40%;
+    top: 30%;
+    width: 2px;
 }
 
 .learn-more .btn-contact:hover, .footer .btn-contact:hover {
@@ -1202,6 +1213,10 @@ body {
 
     .cd-headline .letter-separate {
         display: none;
+    }
+
+    .project-team label {
+        margin-right: initial;
     }
 }
 

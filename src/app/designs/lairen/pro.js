@@ -12,11 +12,15 @@ $Page.define('designs.lairen.pro', {
         $('#footer').html( template('footer.tpl', { has_contact: false } ) );
     },
     
-    onRendering: function () {
-    
-    },
-    
     onRendered: function () {
+        adjust_for_dark();
+        
+        //$('html').has('.dark-mode') && $('.themeable-img').forEach(
+        //    function(x) {
+        //        var target = $(x);
+        //        target.attr( 'src', target.data('dark-src') );
+        //    }
+        //);
     },
     
     onResume: function () {

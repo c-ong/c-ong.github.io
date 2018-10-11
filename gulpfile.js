@@ -825,7 +825,8 @@ function handle_stage_change(new_stage) {
                                'src/assets/css/base.css',
                                'src/assets/css/xfly.css',
                                'src/assets/css/codes.css',
-                               'src/assets/css/animation.css' ] )
+                               'src/assets/css/animation.css',
+                               'src/assets/css/dark-theme.css' ] )
                            .pipe( concat_css( 'main.css' ) )
                            .pipe( clean_css() )
                            .pipe( gulp.dest( 'assets/css/inline' ) );
@@ -851,7 +852,8 @@ function handle_stage_change(new_stage) {
                                      'src/app/build/footer.tpl.js',
                                      'src/assets/vendor/zepto/1.2.0/zepto.min.js',
                                      'src/assets/vendor/zepto/1.2.0/detect.js',
-                                     'src/assets/js/xfly/xfly-dev-0.1.52.js' ] )
+                                     'src/assets/js/xfly/xfly-dev-0.1.52.js',
+                                     '/src/assets/js/base.js'] )
                                  .pipe( concat( 'lib.js' ) )
                                  .pipe( uglify() )
                                  .pipe( gulp.dest( 'assets/js/inline' ) );

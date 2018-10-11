@@ -1,0 +1,125 @@
+/* Switch effect */
+.dark-mode body,
+.dark-mode .home h2,
+.dark-mode h4,
+.dark-mode .item-type,
+.dark-mode .footer,
+.dark-mode .learn-more .contact h3,
+.dark-mode .footer .contact h3,
+.dark-mode footer .btn-contact,
+.dark-mode .cursor,
+.dark-mode .architecture a,
+.dark-mode .architecture a::after,
+.dark-mode .footer .copyright {
+    -webkit-transition: all .8s linear;
+    transition: all .8s linear;
+}
+
+.dark-mode body {
+    color: white;
+    /*background: rgb(42, 40, 38);*/
+    background: black;
+}
+
+/* Home nav */
+.dark-mode .header .navbar-default .navbar-nav > li > a {
+    color: rgba(255, 255, 255, .4);
+}
+.dark-mode .header .navbar-default .navbar-nav > li > a:hover {
+    color: white;
+}
+.dark-mode .header .navbar-default .navbar-nav > li.current > a {
+    color: white;
+}
+
+.dark-mode .home h2 {
+    color: rgba(255, 255, 255, .75);
+}
+.dark-mode h4 {
+    color: white;
+}
+.dark-mode .item-type {
+    color: rgba(255, 255, 255, .7);
+}
+.dark-mode .item-name:hover {
+    color: white;
+}
+.dark-mode .designs-item:hover .designs-image {
+    box-shadow: 0 0 48px 10px rgb(21, 126, 251);
+}
+.dark-mode .designs-item:hover .item-name {
+    color: white;
+}
+
+.dark-mode .footer {
+    /*background: black;*/
+    background: rgb(42, 40, 38);
+}
+.dark-mode .learn-more .contact h3,
+.dark-mode .footer .contact h3 {
+    color: white;
+}
+.dark-mode footer .btn-contact,
+.dark-mode .learn-more .btn-contact {
+    background: rgb(21, 126, 251);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.dark-mode .learn-more .btn-contact:hover,
+.dark-mode .footer .btn-contact:hover {
+    box-shadow: 0 20px 80px 10px rgba(0, 0, 0, 0.48);
+}
+.dark-mode .cursor {
+    background: white;
+}
+
+.dark-mode .architecture a {
+    color: rgba(255, 255, 255, .5);
+}
+.dark-mode .architecture a::after {
+    background-color: white;
+}
+.dark-mode .architecture a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.dark-mode .footer .copyright {
+    color: rgba(255, 255, 255, .5);
+}
+
+/* Detail of Project */
+.dark-mode .project-section .project-section__title {
+    opacity: .8;
+}
+.dark-mode .project-section-cnt p {
+    color: rgba(255, 255, 255, .5);
+}
+.dark-mode .project-section ul li {
+    color: rgba(255, 255, 255, .75);
+}
+.dark-mode .project-team a {
+    color: white;
+}
+.dark-mode .nextrouter-label {
+    color: rgba(255, 255, 255, .5);
+}
+.dark-mode .icon-chevronleft {
+    background-image: url("/assets/img/chevron_left_white.png")
+}
+.dark-mode .icon-chevronright {
+    background-image: url("/assets/img/chevron_right_white.png");
+}
+
+.dark-mode .xfly-example {
+    /*background: rgb(42, 40, 38);*/
+    background: black;
+}
+.dark-mode .xfly-example-inner a,
+.dark-mode .xfly-example-inner .sign-in,
+.dark-mode .xfly-example-inner .sign-out {
+    background-color: #9e9e9e57
+}
+.dark-mode .xfly-example .header {
+    border-bottom: none;
+}
+.dark-mode .xfly-example p {
+    color: rgba(255, 255, 255, .7);
+}
