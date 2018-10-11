@@ -853,7 +853,7 @@ function handle_stage_change(new_stage) {
                                      'src/assets/vendor/zepto/1.2.0/zepto.min.js',
                                      'src/assets/vendor/zepto/1.2.0/detect.js',
                                      'src/assets/js/xfly/xfly-dev-0.1.52.js',
-                                     '/src/assets/js/base.js'] )
+                                     'src/assets/js/base.js'] )
                                  .pipe( concat( 'lib.js' ) )
                                  .pipe( uglify() )
                                  .pipe( gulp.dest( 'assets/js/inline' ) );
