@@ -13,7 +13,7 @@ $Page.define('designs.lairen.pro', {
     },
     
     onRendered: function () {
-        adjust_for_dark();
+        adjust_assets_for_mode_change();
         
         //$('html').has('.dark-mode') && $('.themeable-img').forEach(
         //    function(x) {

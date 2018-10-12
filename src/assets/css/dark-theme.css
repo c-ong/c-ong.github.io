@@ -1,18 +1,18 @@
 /* Switch effect */
-.dark-mode body,
-.dark-mode .home h2,
-.dark-mode h4,
-.dark-mode .item-type,
-.dark-mode .footer,
-.dark-mode .learn-more .contact h3,
-.dark-mode .footer .contact h3,
-.dark-mode footer .btn-contact,
-.dark-mode .cursor,
-.dark-mode .architecture a,
-.dark-mode .architecture a::after,
-.dark-mode .footer .copyright {
-    -webkit-transition: all .8s linear;
-    transition: all .8s linear;
+body,
+.home h2,
+h4,
+.item-type,
+.footer,
+.learn-more .contact h3,
+.footer .contact h3,
+footer .btn-contact,
+.cursor,
+.architecture a,
+.architecture a::after,
+.footer .copyright {
+    -webkit-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
 }
 
 .dark-mode body {
