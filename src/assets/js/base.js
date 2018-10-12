@@ -33,7 +33,7 @@ function change_theme_by_time(  ) {
         var hours = now();
         var html = $('html');
     
-        if ( 6 > hours || hours > 16 ) {
+        if ( 6 > hours || hours >= 16 ) {
             html.addClass( 'dark-mode' );
             adjust_assets_for_mode_change( 'dark-mode' );
         } else if ( html.hasClass( 'dark-mode' ) ) {
