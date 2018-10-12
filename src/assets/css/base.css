@@ -975,9 +975,11 @@ body {
     font-weight: 400;
 }
 
-.learn-more h2, .footer h2 {
+.learn-more h2,
+.footer h2 {
     font-size: 20px;
     font-weight: normal;
+    padding-top: 2rem;
     /*line-height: 1.67em;*/
 }
 .learn-more .btn-contact,
@@ -985,7 +987,7 @@ body {
     position: relative;
     display: inline-block;
     font-size: 16px;
-    padding: .8em 1.2em;
+    padding: .6em 1.2em;
     border-radius: 4px;
     /* vertical-align: middle; */
     transition: box-shadow .4s ease-in-out;

@@ -115,10 +115,11 @@
 .dark-mode .xfly-example-inner a,
 .dark-mode .xfly-example-inner .sign-in,
 .dark-mode .xfly-example-inner .sign-out {
-    background-color: #9e9e9e57
+    background-color: rgba(158, 158, 158, .85);
 }
 .dark-mode .xfly-example .header {
     border-bottom: none;
+    background: rgb(42, 40, 38);
 }
 .dark-mode .xfly-example p {
     color: rgba(255, 255, 255, .7);
