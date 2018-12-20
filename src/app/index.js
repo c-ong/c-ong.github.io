@@ -32,6 +32,14 @@ $Page.define('index', {
             
             return false;
         } );
+        $('.mini-program').on('click', function () {
+            var ctx = $( this );
+            
+            
+            ctx.find('.overlay').css( { opacity: 1 } );
+            
+            return false;
+        } );
     },
     
     onResume: function () {

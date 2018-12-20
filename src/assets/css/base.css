@@ -333,7 +333,8 @@ body {
     opacity: 0;
     transition: opacity .4s ease-in-out;
 }
-.designs .overlay span {
+.designs .overlay span,
+.freight-lite img {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -345,6 +346,16 @@ body {
     border-radius: 4px;
     font-size: 20px;
     font-weight: bolder;
+    overflow: hidden;
+}
+.freight-lite {
+    background: #fff!important;
+}
+.freight-lite img {
+    width: 94%!important;
+    /*background: #000;*/
+    border: none;
+    padding: 0;
 }
 
 /* Design */
@@ -367,6 +378,8 @@ body {
 
 .designs-item .designs-image {
     position: relative;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
 .designs-item .designs-image img {
